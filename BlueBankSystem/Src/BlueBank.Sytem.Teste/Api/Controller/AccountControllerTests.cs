@@ -12,9 +12,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
+
 namespace BlueBank.Sytem.Teste.Api.Controller
-{
-    public class AccountControllerTests : IntegrationTest
+{    public class AccountControllerTests : IntegrationTest
     {
         private string AccountEndpoint { get; set; }
         private Guid CustomerId { get; set; }

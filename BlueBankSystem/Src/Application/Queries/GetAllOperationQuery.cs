@@ -24,19 +24,20 @@ namespace BlueBank.System.Application.Queries
             var predicate = PredicateBuilder.New<Operation>();
 
 
-            if (request.IsActive != null) predicate = predicate.And(operation => operation.IsActive == request.IsActive);
+            //if (request.IsActive != null) predicate = predicate.And(operation => operation.IsActive == request.IsActive);
             return _operationrepository
 
 
                 .Get(predicate)
                 .Select(operation => new GetAllOperationResponse()
-                {
+                {                    
                     Id = operation.Id,
                     AccountOrigin = operation.AccountOrigin,
                     AccountRecipient = operation.AccountRecipient,
                     Date = operation.Date,
-                    Value = operation.Value
-                });
+                    Value = operation.Value,
+                    IsActive = operation.IsActive
+                }); ;
         }
     }    
 }
